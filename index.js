@@ -19,6 +19,11 @@ const app = express();
 
 app.use(cors());
 app.use(json());
+
+app.use("/", (req, res) => {
+  res.json({ message: "Hello From Express App" });
+});
+
 app.use("/api", orderRoutes);
 
 const PORT = process.env.PORT || 5000;
